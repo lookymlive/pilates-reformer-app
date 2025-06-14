@@ -1,0 +1,350 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Colores personalizados para Pilates Reformer */
+  --color-sage-green: #9CAF88;
+  --color-sage-green-light: #E6F7F1;
+  --color-warm-beige: #F7F5F3;
+  --color-soft-coral: #FF8A80;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  
+  /* Variables personalizadas */
+  --sage-green: #9CAF88;
+  --sage-green-light: #E6F7F1;
+  --warm-beige: #F7F5F3;
+  --soft-coral: #FF8A80;
+  --charcoal-gray: #2D3748;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Estilos específicos para la aplicación de Pilates */
+.pilates-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.pilates-card {
+  @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow duration-200;
+}
+
+.pilates-button-primary {
+  @apply font-medium py-2 px-4 rounded-lg transition-colors duration-200 text-white;
+  background-color: var(--sage-green);
+}
+
+.pilates-button-primary:hover {
+  background-color: #8a9e7a;
+}
+
+.pilates-button-secondary {
+  @apply font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  border: 1px solid var(--sage-green);
+  color: var(--sage-green);
+}
+
+.pilates-button-secondary:hover {
+  background-color: var(--sage-green-light);
+}
+
+.pilates-input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-lg transition-colors duration-200;
+}
+
+.pilates-input:focus {
+  border-color: var(--sage-green);
+  box-shadow: 0 0 0 3px rgba(156, 175, 136, 0.1);
+  outline: none;
+}
+
+/* Estilos para el calendario */
+.calendar-day {
+  @apply p-2 text-center cursor-pointer rounded-lg transition-colors duration-200;
+}
+
+.calendar-day:hover {
+  background-color: var(--sage-green-light);
+}
+
+.calendar-day.available {
+  @apply bg-green-50 text-green-700 border border-green-200;
+}
+
+.calendar-day.booked {
+  @apply bg-blue-50 text-blue-700 border border-blue-200;
+}
+
+.calendar-day.full {
+  @apply bg-red-50 text-red-700 border border-red-200;
+}
+
+.calendar-day.cancelled {
+  @apply bg-gray-50 text-gray-500 border border-gray-200;
+}
+
+/* Estilos para notificaciones */
+.notification-success {
+  @apply bg-green-50 border border-green-200 text-green-800 p-4 rounded-lg;
+}
+
+.notification-error {
+  @apply bg-red-50 border border-red-200 text-red-800 p-4 rounded-lg;
+}
+
+.notification-warning {
+  @apply bg-yellow-50 border border-yellow-200 text-yellow-800 p-4 rounded-lg;
+}
+
+.notification-info {
+  @apply bg-blue-50 border border-blue-200 text-blue-800 p-4 rounded-lg;
+}
+
+/* Estilos para el header */
+.pilates-header {
+  @apply bg-white shadow-sm border-b border-gray-100;
+}
+
+.pilates-logo {
+  @apply text-2xl font-bold;
+  color: var(--sage-green);
+}
+
+/* Estilos para el sidebar de administración */
+.admin-sidebar {
+  @apply bg-white shadow-lg border-r border-gray-100 h-full;
+}
+
+.admin-sidebar-item {
+  @apply flex items-center px-4 py-3 text-gray-700 hover:text-gray-900 transition-colors duration-200 cursor-pointer;
+}
+
+.admin-sidebar-item:hover {
+  background-color: var(--sage-green-light);
+  color: var(--sage-green);
+}
+
+.admin-sidebar-item.active {
+  background-color: var(--sage-green-light);
+  color: var(--sage-green);
+  border-right: 2px solid var(--sage-green);
+}
+
+/* Estilos para métricas del dashboard */
+.metric-card {
+  @apply bg-white rounded-xl p-6 shadow-sm border border-gray-100;
+}
+
+.metric-value {
+  @apply text-3xl font-bold;
+  color: var(--sage-green);
+}
+
+.metric-label {
+  @apply text-sm text-gray-600 mt-1;
+}
+
+/* Estilos para formularios */
+.form-group {
+  @apply mb-4;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700 mb-2;
+}
+
+.form-error {
+  @apply text-red-600 text-sm mt-1;
+}
+
+.form-help {
+  @apply text-gray-500 text-sm mt-1;
+}
+
+/* Estilos para tablas */
+.pilates-table {
+  @apply w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm;
+}
+
+.pilates-table th {
+  @apply bg-gray-50 px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+}
+
+.pilates-table td {
+  @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900 border-b border-gray-200;
+}
+
+.pilates-table tr:hover {
+  @apply bg-gray-50;
+}
+
+/* Estilos para badges de estado */
+.status-badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.status-badge.confirmed {
+  @apply bg-green-100 text-green-800;
+}
+
+.status-badge.cancelled {
+  @apply bg-red-100 text-red-800;
+}
+
+.status-badge.pending {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.status-badge.completed {
+  @apply bg-blue-100 text-blue-800;
+}
+
+/* Animaciones personalizadas */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .pilates-container {
+    @apply px-2;
+  }
+  
+  .pilates-card {
+    @apply p-4;
+  }
+  
+  .metric-card {
+    @apply p-4;
+  }
+  
+  .metric-value {
+    @apply text-2xl;
+  }
+}
