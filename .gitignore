@@ -1,1 +1,55 @@
-node_modules
+# Node modules
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables
+.env
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+*.log
+
+# Others
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Optional: lock files (if you want to ignore them)
+# package-lock.json
+yarn.lock
+
+# Tailwind JIT cache
+.tailwind*
+
+# Mac system files
+Icon?
+
+# Coverage
+coverage/
+
+# Misc
+*.tgz
+
+# Ignore example env, keep for reference!
+!.env.example
